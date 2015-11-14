@@ -1,10 +1,10 @@
 var fs = require('fs');
+var path = require('path');
 var https = require('https');
 
-function defineServer(certFileName, port) {
+function defineServer(certDir, port) {
     var server = https.createServer({
-        key: fs.readFileSync(certFileName + '.key', 'utf8'),
-        cert: fs.readFileSync(certFileName + '.crt', 'utf8')
+        pfx: fs.readFileSync(path.join(certDir, 'ssl.pfx'))
     }, function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -13,5 +13,5 @@ function defineServer(certFileName, port) {
     server.listen(port, 'localhost');
 }
 
-defineServer('localhost-1', 8001);
-defineServer('localhost-2', 8002);
+defineServer('ssl-1', 8001);
+defineServer('ssl-2', 8002);
