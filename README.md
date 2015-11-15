@@ -20,7 +20,7 @@ NodeJS модуль `index.js` поднимает серверы https://localho
 
 **Внимание!** п.3 можно пропустить, если сделать [суперфинт](http://stackoverflow.com/questions/6793174/third-party-signed-ssl-certificate-for-localhost-127-0-0-1/22258328#22258328):
 
-1. Приобретаем сертификат SSL у известного CA для своего домена local.mysite.ru.
-2. Прописываем в DNS local.mysite.ru = 127.0.0.1.
+1. Приобретаем сертификат SSL у известного CA для своего домена local.example.ru.
+2. Прописываем в DNS local.example.ru = 127.0.0.1.
 3. Запускаем локальный сервер на приобретенном SSL на порту 8001
-4. Запросы к локальному серверу должны быть не по https://localhost:8001, а по https://local.mysite.ru:8001. Тогда проблем с сертификатом SSL не будет.
+4. Запросы к локальному серверу должны быть не по https://localhost:8001, а по https://local.example.ru:8001. Тогда проблем с сертификатом SSL не будет.
