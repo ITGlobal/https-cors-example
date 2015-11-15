@@ -11,7 +11,7 @@ function defineServer(certDir, port) {
         res.end('Hello, I am your Local Server on https://localhost:' + port + '!\n');
     });
     server.listen(port, 'localhost');
-    console.log('Listen https://localhost:' + port)
+    console.log('Listen https://localhost:' + port);
 }
 
 defineServer('ssl-1', 8001);
